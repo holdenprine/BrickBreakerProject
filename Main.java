@@ -9,7 +9,7 @@ public class Main {
 
         JFrame obj = new JFrame();
         // adjust bounds
-        obj.setBounds(10, 10, 800, 700);
+        obj.setBounds(10, 10, 700, 600);
         obj.setTitle("Brick Breaker");
         obj.setResizable(false);
         obj.setVisible(true);
