@@ -40,27 +40,27 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
 
     public void paint(Graphics g) {
         // background
-        g.setColor(Color.BLACK);
+        g.setColor(Color.black);
         g.fillRect(1, 1, 692, 592);
 
         map.draw((Graphics2D) g);
         // borders
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.gray);
         g.fillRect(0, 0, 3, 592);
         g.fillRect(0, 0, 692, 3);
         g.fillRect(691, 0, 3, 592);
 
-        // scores
+        // score
         g.setColor(Color.white);
         g.setFont(new Font("serif", Font.BOLD, 25));
         g.drawString("" + score, 590, 30);
 
         // paddle color
-        g.setColor(Color.GREEN);
+        g.setColor(Color.blue);
         g.fillRect(playerX, 550, 100, 8);
 
         // ball color
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.cyan);
         g.fillOval(ballPosX, ballPosY, 20, 20);
 
         if (totalBricks <= 0) {
@@ -68,11 +68,11 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             ballXDir = 0;
             ballYDir = 0;
             g.setColor(Color.RED);
-            g.setFont(new Font("serif", Font.BOLD, 25));
+            g.setFont(new Font("Times", Font.BOLD, 25));
             g.drawString("You WON!: ", 190, 300);
 
-            g.setFont(new Font("serif", Font.BOLD, 25));
-            g.drawString("Press Enter to Restart!", 190, 300);
+            g.setFont(new Font("Times", Font.BOLD, 25));
+            g.drawString("Press Enter to Restart!", 190, 350);
         }
 
         if (ballPosY > 570) {
@@ -80,11 +80,11 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             ballXDir = 0;
             ballYDir = 0;
             g.setColor(Color.RED);
-            g.setFont(new Font("serif", Font.BOLD, 25));
-            g.drawString("Game Over, Scores: ", 190, 300);
+            g.setFont(new Font("Times", Font.BOLD, 25));
+            g.drawString("Game Over, Score: " + score, 190, 300);
 
-            g.setFont(new Font("serif", Font.BOLD, 25));
-            g.drawString("Press Enter to Restart!", 190, 300);
+            g.setFont(new Font("Times", Font.BOLD, 25));
+            g.drawString("Press Enter to Restart!", 190, 350);
 
         }
 
